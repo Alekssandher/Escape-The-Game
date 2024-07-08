@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ces4td8l5cfhh"]
+[gd_scene load_steps=3 format=3 uid="uid://d1r7nuofmbtcf"]
 
 [ext_resource type="PackedScene" uid="uid://c434r2b4cfw20" path="res://player.tscn" id="1_fenw5"]
 
@@ -14,4 +14,4 @@ position = Vector2(593, 636)
 shape = SubResource("RectangleShape2D_cdnrg")
 
 [node name="Node2D" parent="." instance=ExtResource("1_fenw5")]
-position = Vector2(-85, -357)
+position = Vector2(-127, -311)

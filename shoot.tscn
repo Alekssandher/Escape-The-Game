@@ -1,68 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://bheo7tsllb6ba"]
+[gd_scene load_steps=4 format=3 uid="uid://bheo7tsllb6ba"]
 
 [ext_resource type="Script" path="res://shoot.gd" id="1_5qwxg"]
-[ext_resource type="Texture2D" uid="uid://uin8c1edrffx" path="res://sci-fi/Bot Wheel/GAS dash FX.png" id="1_wvt6u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fekeu"]
-atlas = ExtResource("1_wvt6u")
-region = Rect2(0, 0, 117, 36)
+[sub_resource type="CanvasTexture" id="CanvasTexture_7is4v"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_boihe"]
-atlas = ExtResource("1_wvt6u")
-region = Rect2(0, 36, 117, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4asd"]
-atlas = ExtResource("1_wvt6u")
-region = Rect2(0, 72, 117, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w7wt4"]
-atlas = ExtResource("1_wvt6u")
-region = Rect2(0, 108, 117, 36)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l3n8i"]
-atlas = ExtResource("1_wvt6u")
-region = Rect2(0, 144, 117, 36)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2mmae"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fekeu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_boihe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o4asd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w7wt4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l3n8i")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kf2uv"]
-radius = 13.0
-height = 126.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsq7f"]
+size = Vector2(8, 8)
 
 [node name="shoot" type="Area2D"]
-position = Vector2(260, 211)
 script = ExtResource("1_5qwxg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(53, -10)
-scale = Vector2(1.41667, 1.41667)
-sprite_frames = SubResource("SpriteFrames_2mmae")
-frame_progress = 0.457952
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(8, 8)
+texture = SubResource("CanvasTexture_7is4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(61, -12)
-rotation = -1.5708
-shape = SubResource("CapsuleShape2D_kf2uv")
-
-[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_wsq7f")

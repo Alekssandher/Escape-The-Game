@@ -1,11 +1,18 @@
 extends Area2D
 
-var speed = 750
+const speed := 500
+var velocity := Vector2.ZERO
+var direction := Vector2.ZERO
+var gravidade = 1
+
+func _ready():
+	pass
 
 func _physics_process(delta):
-	position += transform.x * speed * delta
+	velocity = direction * speed * delta
+	translate(velocity)
+	
+	velocity.y += gravidade
 
-func _on_Bullet_body_entered(body):
-	if body.is_in_group("mobs"):
-		body.queue_free()
-	queue_free()
+func setDirection(dir):
+	direction = dir
