@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt4dmi2j1nqrp"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_mbial"]
+[ext_resource type="Texture2D" uid="uid://bvmogk3t3pwv5" path="res://caverns-files-web/caverns-files-web/layers/background.png" id="1_pc2w6"]
+[ext_resource type="FontFile" uid="uid://cakstexnj5g2n" path="res://GB STUDIO UI ASSET PACK - WYATT199X /frames/LIGHT BG/press_start_2p/PressStart2P.ttf" id="3_rfmys"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xovqc"]
+font = ExtResource("3_rfmys")
+font_size = 25
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m3jf4"]
+font = ExtResource("3_rfmys")
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_gs41y"]
+font = ExtResource("3_rfmys")
+font_size = 23
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[node name="credits" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbial")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pc2w6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.5
+offset_top = 21.0
+offset_right = 87.5
+offset_bottom = 61.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_xovqc")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_top = 132.0
+offset_right = 126.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game/Music:"
+label_settings = SubResource("LabelSettings_m3jf4")
+
+[node name="label5" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rfmys")
+theme_override_font_sizes/font_size = 21
+text = "Alekssandher"
+flat = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.5
+offset_top = 247.0
+offset_right = 195.5
+offset_bottom = 387.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Assets used from:"
+label_settings = SubResource("LabelSettings_gs41y")
+
+[node name="Label2" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rfmys")
+theme_override_font_sizes/font_size = 21
+text = "Lucky"
+flat = true
+
+[node name="Label3" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rfmys")
+theme_override_font_sizes/font_size = 21
+text = "BDragon1727"
+flat = true
+
+[node name="Label4" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rfmys")
+theme_override_font_sizes/font_size = 21
+text = "Ansimuz"
+flat = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.0
+offset_top = 420.0
+offset_right = 196.0
+offset_bottom = 560.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0.607843)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_rfmys")
+theme_override_font_sizes/font_size = 21
+text = "Return to title screen"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer2/label5" to="." method="_on_label_5_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Label2" to="." method="_on_label_2_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Label3" to="." method="_on_label_3_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Label4" to="." method="_on_label_4_pressed"]
+[connection signal="pressed" from="VBoxContainer4/Button" to="." method="_on_button_pressed"]

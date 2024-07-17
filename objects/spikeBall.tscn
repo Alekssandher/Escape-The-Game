@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8xg73qn3cnfg"]
+
+[ext_resource type="Texture2D" uid="uid://c8sx0y0yefjt4" path="res://Trap/SpikeBall.png" id="1_ho38h"]
+
+[sub_resource type="GDScript" id="GDScript_aoyeh"]
+script/source = "extends CharacterBody2D
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+
+
+func _physics_process(delta):
+	# Add the gravity.
+	
+
+
+	move_and_slide()
+	
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dq5gw"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_06q3y"]
+radius = 12.1
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["killZone"]]
+motion_mode = 1
+script = SubResource("GDScript_aoyeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.35714, 1.35714)
+texture = ExtResource("1_ho38h")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dq5gw")
+
+[node name="Area2D" type="Area2D" parent="." groups=["objects"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_06q3y")
+debug_color = Color(0.666614, 0.389224, 0.846963, 0.42)

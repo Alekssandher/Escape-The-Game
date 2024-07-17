@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsphd85x6gsy5"]
+
+[ext_resource type="FontFile" uid="uid://cakstexnj5g2n" path="res://GB STUDIO UI ASSET PACK - WYATT199X /frames/LIGHT BG/press_start_2p/PressStart2P.ttf" id="1_wfy28"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4qvyn"]
+font = ExtResource("1_wfy28")
+font_color = Color(0, 0, 0, 1)
+outline_size = 7
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wfy28")
+text = "Didn't you talk to the npc? huh..."
+label_settings = SubResource("LabelSettings_4qvyn")
+vertical_alignment = 1

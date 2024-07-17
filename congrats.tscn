@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1oc73ci3qefp"]
+
+[ext_resource type="Texture2D" uid="uid://bvmogk3t3pwv5" path="res://caverns-files-web/caverns-files-web/layers/background.png" id="1_mhro5"]
+[ext_resource type="Script" path="res://congrats.gd" id="1_r2csm"]
+[ext_resource type="FontFile" uid="uid://cakstexnj5g2n" path="res://GB STUDIO UI ASSET PACK - WYATT199X /frames/LIGHT BG/press_start_2p/PressStart2P.ttf" id="2_xgaxj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t6bra"]
+font = ExtResource("2_xgaxj")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+
+[node name="congrats" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_r2csm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mhro5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 48.0
+offset_right = 360.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Congratulations!!!"
+label_settings = SubResource("LabelSettings_t6bra")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "You beat the game"
+label_settings = SubResource("LabelSettings_t6bra")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -35.0
+offset_right = 130.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Label2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_xgaxj")
+theme_override_font_sizes/font_size = 25
+text = "Restart "
+flat = true
+
+[node name="Label" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_xgaxj")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+flat = true
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_xgaxj")
+theme_override_font_sizes/font_size = 25
+text = "Credits"
+flat = true
+
+[connection signal="pressed" from="HBoxContainer/Label2" to="." method="_on_label_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Label" to="." method="_on_label_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://jke7x1843bkr"]
+
+[ext_resource type="Script" path="res://objects/plataform.gd" id="1_q6igp"]
+[ext_resource type="Texture2D" uid="uid://bltadow85hlmx" path="res://Trap/Design sem nome.png" id="1_wbefh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1khv"]
+size = Vector2(80, 21)
+
+[sub_resource type="Animation" id="Animation_ypn3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25.862, 8.688)]
+}
+
+[sub_resource type="Animation" id="Animation_lpf4n"]
+resource_name = "shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 0), Vector2(0, 0), Vector2(-2, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sb738"]
+_data = {
+"RESET": SubResource("Animation_ypn3d"),
+"shake": SubResource("Animation_lpf4n")
+}
+
+[node name="plataform" type="AnimatableBody2D" groups=["platforms"]]
+script = ExtResource("1_q6igp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_t1khv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(25.862, 8.688)
+scale = Vector2(0.220326, 0.338783)
+texture = ExtResource("1_wbefh")
+region_enabled = true
+region_rect = Rect2(3, 0, 380, 69.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sb738")
+}
+autoplay = "shake"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

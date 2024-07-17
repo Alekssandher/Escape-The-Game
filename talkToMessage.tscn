@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1yehpio7josl"]
+
+[ext_resource type="FontFile" uid="uid://cakstexnj5g2n" path="res://GB STUDIO UI ASSET PACK - WYATT199X /frames/LIGHT BG/press_start_2p/PressStart2P.ttf" id="1_hhoq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_482oa"]
+font = ExtResource("1_hhoq2")
+font_color = Color(0, 0, 0, 1)
+outline_size = 7
+
+[node name="ColorRect" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Near the merchant press F/⬜ to talk"
+label_settings = SubResource("LabelSettings_482oa")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1r7nuofmbtcf"]
+[gd_scene load_steps=5 format=3 uid="uid://d1r7nuofmbtcf"]
 
-[ext_resource type="PackedScene" uid="uid://c434r2b4cfw20" path="res://player.tscn" id="1_lo37j"]
+[ext_resource type="PackedScene" uid="uid://cfouus725w5hg" path="res://player.tscn" id="1_lo37j"]
+[ext_resource type="PackedScene" uid="uid://b8xg73qn3cnfg" path="res://objects/spikeBall.tscn" id="2_3cehc"]
+[ext_resource type="Script" path="res://objects/spikeBall.gd" id="3_ruwqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdnrg"]
 size = Vector2(1095, 31)
@@ -14,13 +16,20 @@ disable_mode = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_cdnrg")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-disable_mode = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(564, -401)
-rotation = -1.5708
-shape = SubResource("RectangleShape2D_cdnrg")
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -542.0
+offset_top = -13.0
+offset_right = 539.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Node2D" parent="." instance=ExtResource("1_lo37j")]
 position = Vector2(-88, -367)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_3cehc")]
+position = Vector2(81, -87)
+script = ExtResource("3_ruwqd")

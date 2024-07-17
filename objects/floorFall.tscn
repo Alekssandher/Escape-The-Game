@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bffugqk2p76k0"]
+
+[ext_resource type="PackedScene" uid="uid://jke7x1843bkr" path="res://objects/plataform.tscn" id="1_gm6b8"]
+
+[node name="plataform" instance=ExtResource("1_gm6b8")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(7.92813, 8.51818)
+hframes = 24
+vframes = 17
+frame = 169
+region_enabled = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
